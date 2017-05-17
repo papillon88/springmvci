@@ -11,6 +11,9 @@
     <title>Index</title>
   </head>
   <body>
-  Hello World !
+  Hello World !<br>
+  Session : <%=session.getAttribute("name")%><br>
+  Request : <%=request.getAttribute("name")%><br>
+  Request (using EL) : ${name}
   </body>
 </html>

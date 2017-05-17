@@ -24,6 +24,8 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.8.RELEASE'
     compile group: 'org.springframework', name: 'spring-web', version: '4.3.8.RELEASE'
     compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.8.RELEASE'
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+
 
 }
 

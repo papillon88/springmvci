@@ -18,7 +18,7 @@ public class OffersController {
     @RequestMapping("/")
     public String showHome(HttpSession session, Model model){
         session.setAttribute("name","debaspreet");
-        model.addAttribute("name","devopreet");
+        model.addAttribute("name","<b>devopreet</b>");
         return "index";
         /*ModelAndView mv = new ModelAndView("index");
         Map<String,Object> map = mv.getModel();

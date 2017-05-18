@@ -1,11 +1,14 @@
 package com.papillon.dc.dao;
 
+import javax.validation.constraints.Size;
+
 /**
  * Created by papillon on 5/16/2017.
  */
 public class Offer {
 
     private int id;
+    @Size(min = 5,max = 100)
     private String name;
     private String email;
     private String text;

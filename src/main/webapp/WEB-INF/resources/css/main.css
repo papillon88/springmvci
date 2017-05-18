@@ -1,0 +1,16 @@
+.formtable{
+    padding:10px;
+    border:1px solid deepskyblue;
+}
+input[type=text]{
+    width:150px;
+}
+textarea{
+    width:150px;
+    height:150px;
+}
+.label{
+    text-align: left;
+    vertical-align: top;
+    margin-right: 10px;
+}

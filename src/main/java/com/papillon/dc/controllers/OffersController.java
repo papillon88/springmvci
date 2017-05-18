@@ -48,6 +48,7 @@ public class OffersController {
 
     @RequestMapping("/createoffer")
     public String crateOffer(HttpSession session, Model model){
+        model.addAttribute("offer",new Offer());
         return "createoffer";
     }
 
@@ -66,10 +67,18 @@ public class OffersController {
             for(ObjectError error : errors){
                 System.out.println(error.getDefaultMessage());
             }
+
+
+
+            return "createoffer";
         } else {
             System.out.println("Form does validate");
+            System.out.println(offer);
+
+
+
+
+            return "offercreated";
         }
-        System.out.println(offer);
-        return "offercreated";
     }
 }

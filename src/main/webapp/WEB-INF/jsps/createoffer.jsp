@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+
 <html>
 <head>
     <title>Title</title>
@@ -14,17 +16,26 @@
 <body>
 
 
-<form method="post" action="${pageContext.request.contextPath}/docreate">
-
+<sf:form method="post" action="${pageContext.request.contextPath}/docreate" commandName="offer">
     <table class="formtable">
-        <tr><td class="label">Name</td><td><input name="name" type="text"/></td></tr>
-        <tr><td class="label">Email</td><td><input name="email" type="text"/></td></tr>
-        <tr><td class="label">Your Offer</td><td><textarea name="text" rows="10" cols="18"></textarea></td></tr>
-        <tr><td class="label"></td><td><input value="Submit" type="submit"/></td></tr>
+        <tr>
+            <td class="label">Name</td>
+            <td><sf:input class="control" path="name" name="name" type="text"/><br><sf:errors path="name" cssClass="error"></sf:errors></td>
+        </tr>
+        <tr>
+            <td class="label">Email</td>
+            <td><sf:input class="control" path="email" name="email" type="text"/><br><sf:errors path="email" cssClass="error"></sf:errors></td>
+        </tr>
+        <tr>
+            <td class="label">Your Offer</td>
+            <td><sf:textarea class="control" path="text" name="text" rows="10" cols="18"></sf:textarea><br><sf:errors path="text" cssClass="error"></sf:errors></td>
+        </tr>
+        <tr>
+            <td class="label"></td>
+            <td><input class="control" value="Submit" type="submit"/></td>
+        </tr>
     </table>
-
-
-</form>
+</sf:form>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 .formtable{
     padding:10px;
-    border:1px solid deepskyblue;
+    border:5px solid darkblue;
 }
 input[type=text]{
     width:150px;
@@ -13,4 +13,13 @@ textarea{
     text-align: left;
     vertical-align: top;
     margin-right: 10px;
+}
+
+.control {
+    margin-left: 10px;
+}
+
+.error {
+    font-size:small;
+    color: red;
 }

@@ -14,7 +14,6 @@
     <title>Index</title>
   </head>
   <body>
-  Hello World !<br>
   <%--Session : <%=session.getAttribute("name")%><br>
   Request : <%=request.getAttribute("name")%><br>
   Request (using EL) : ${name}<br>
@@ -24,13 +23,8 @@
     select * from offers
   </sql:query>--%>
 
-
-  <c:forEach var="row" items="${offers}">
-    Id ${row.id}
-    Name ${row.name}
-    Email ${row.email}
-    Text ${row.text}<br/>
-  </c:forEach>
+  <a href="${pageContext.request.contextPath}/offers">Show Offers</a><br><br><br>
+  <a href="${pageContext.request.contextPath}/createoffer">Create Offer</a>
 
   </body>
 </html>

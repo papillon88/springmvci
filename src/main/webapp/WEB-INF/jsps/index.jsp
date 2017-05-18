@@ -15,22 +15,20 @@
   </head>
   <body>
   Hello World !<br>
-  Session : <%=session.getAttribute("name")%><br>
+  <%--Session : <%=session.getAttribute("name")%><br>
   Request : <%=request.getAttribute("name")%><br>
   Request (using EL) : ${name}<br>
   Request (using JSTL) :<c:out value="${name}"></c:out><br>
 
-
-
-
   <sql:query var="rs" dataSource="jdbc/spring">
     select * from offers
-  </sql:query>
+  </sql:query>--%>
 
-  <c:forEach var="row" items="${rs.rows}">
-    Id ${row.id}<br/>
-    Name ${row.name}<br/>
-    Email ${row.email}<br/>
+
+  <c:forEach var="row" items="${offers}">
+    Id ${row.id}
+    Name ${row.name}
+    Email ${row.email}
     Text ${row.text}<br/>
   </c:forEach>
 

@@ -13,6 +13,7 @@
 </head>
 <body>
 
+<table>
 <c:forEach var="row" items="${offers}">
     <%--Id ${row.id}
     Name ${row.name}
@@ -20,6 +21,7 @@
     Text ${row.text}<br/>--%>
     <c:out value="${row}"></c:out><br>
 </c:forEach>
+</table>
 
 </body>
 </html>

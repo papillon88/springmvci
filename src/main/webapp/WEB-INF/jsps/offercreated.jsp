@@ -14,5 +14,7 @@
 
 Offer created !
 
+<a href="${pageContext.request.contextPath}/offers">View current offers</a>
+
 </body>
 </html>

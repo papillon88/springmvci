@@ -1,5 +1,7 @@
 package com.papillon.dc.dao;
 
+import com.papillon.dc.validators.ValidEmail;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -13,7 +15,8 @@ public class Offer {
     @Size(min = 5,max = 100,message = "name between 5 and 100 chars")
     private String name;
     @NotNull
-    @Pattern(regexp = ".*\\@.*\\..*",message = "invalid email")
+    //@Pattern(regexp = ".*\\@.*\\..*",message = "invalid email")
+    @ValidEmail(min = 6)
     private String email;
     @Size(min = 20,max = 255,message = "text between 20 and 255 chars")
     private String text;

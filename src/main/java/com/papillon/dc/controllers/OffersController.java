@@ -41,6 +41,7 @@ public class OffersController {
         map.put("name","<b>debas</b>");
         System.out.println("received");
         return mv;*/
+        offersService.throwTestException();
         List<Offer> offers = offersService.getCurrent();
         model.addAttribute("offers",offers);
         return "offers";

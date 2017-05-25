@@ -11,6 +11,6 @@
     <title>Error</title>
 </head>
 <body>
-    An unforseen error occured.
+    An unforseen server error occured.
 </body>
 </html>

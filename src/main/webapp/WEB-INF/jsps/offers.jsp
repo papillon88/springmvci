@@ -26,7 +26,7 @@
             <td><c:out value="${row.name}"></c:out></td>
             <td><c:out value="${row.email}"></c:out></td>
             <td><c:out value="${row.text}"></c:out></td>
-        </tr><br>
+        </tr>
     </c:forEach>
 </table>
 

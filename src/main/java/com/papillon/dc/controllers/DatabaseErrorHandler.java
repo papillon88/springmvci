@@ -12,6 +12,6 @@ public class DatabaseErrorHandler {
 
     @ExceptionHandler(DataAccessException.class)
     public String handleDatabaseException(DataAccessException ex){
-        return "database error occured";
+        return "database internal error occured";
     }
 }

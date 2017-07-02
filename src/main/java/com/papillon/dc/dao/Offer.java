@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 public class Offer {
 
     private int id;
-    @Size(min = 5,max = 100,message = "name between 5 and 100 chars")
+    @Size(min = 5,max = 100,message = "name should be between 5 and 100 chars")
     private String name;
     @NotNull
     //@Pattern(regexp = ".*\\@.*\\..*",message = "invalid email")

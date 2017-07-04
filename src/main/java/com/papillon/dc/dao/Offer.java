@@ -18,7 +18,7 @@ public class Offer {
     //@Pattern(regexp = ".*\\@.*\\..*",message = "invalid email")
     @ValidEmail(min = 6)
     private String email;
-    @Size(min = 20,max = 255,message = "text between 20 and 255 chars")
+    @Size(min = 20,max = 255,message = "text should be between 20 and 255 chars")
     private String text;
 
     public Offer(){}

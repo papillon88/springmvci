@@ -32,6 +32,12 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.4.1.Final'
     //add custom validator dependency
     compile group: 'commons-validator', name: 'commons-validator', version: '1.4.0'
+    //spring security
+    compile group: 'org.springframework.security', name: 'spring-security-core', version: '4.2.3.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-web', version: '4.2.3.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.2.3.RELEASE'
+
+
 
 
 }

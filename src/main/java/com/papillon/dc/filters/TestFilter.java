@@ -8,13 +8,13 @@ import java.io.IOException;
 /**
  * Created by papillon on 7/12/2017.
  */
-@WebFilter(filterName = "TestFilter", urlPatterns = "/*")
-public class TestFilter implements Filter {
+//@WebFilter(filterName = "TestFilter", urlPatterns = "/*")
+public class TestFilter /*implements Filter*/ {
     public void destroy() {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        System.out.println(((HttpServletRequest)req).getRequestURI().toString());
+
         chain.doFilter(req, resp);
     }
 

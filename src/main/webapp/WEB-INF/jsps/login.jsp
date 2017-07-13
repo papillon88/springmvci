@@ -32,6 +32,9 @@
             <input type="hidden" name="${_csrf.parameterName}"
                    value="${_csrf.token}" />
         </tr>
+        <tr>
+            <td><p><a href="${pageContext.request.contextPath}/newaccount"/>Create new Account</p></td>
+        </tr>
     </table>
 </form>
 </body>

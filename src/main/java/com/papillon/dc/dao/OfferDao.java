@@ -16,12 +16,12 @@ import java.util.List;
 /**
  * Created by papillon on 5/16/2017.
  */
-@Repository("OfferDAO")
-public class OfferDAO {
+@Repository("OfferDao")
+public class OfferDao {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    public OfferDAO(){
+    public OfferDao(){
         System.out.println("success offerDAO");
     }
 

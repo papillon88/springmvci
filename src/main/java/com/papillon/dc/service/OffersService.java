@@ -1,7 +1,7 @@
 package com.papillon.dc.service;
 
 import com.papillon.dc.dao.Offer;
-import com.papillon.dc.dao.OfferDAO;
+import com.papillon.dc.dao.OfferDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,24 +13,24 @@ import java.util.List;
 @Service("offerService")
 public class OffersService {
 
-    private OfferDAO offerDAO;
+    private OfferDao offerDao;
 
     @Autowired
-    public void setOfferDAO(OfferDAO offerDAO) {
-        this.offerDAO = offerDAO;
+    public void setOfferDao(OfferDao offerDao) {
+        this.offerDao = offerDao;
     }
 
     public List<Offer> getCurrent(){
-        return offerDAO.getOffers();
+        return offerDao.getOffers();
     }
 
     public void create(Offer offer){
-        offerDAO.create(offer);
+        offerDao.create(offer);
     }
 
     public void throwTestException() {
 
-        offerDAO.getOffer(9999);
+        offerDao.getOffer(9999);
 
     }
 }

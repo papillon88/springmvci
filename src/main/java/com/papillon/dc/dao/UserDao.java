@@ -42,4 +42,10 @@ public class UserDao {
                                 "values (:username,:authority)",
                         beanPropertySqlParameterSource) == 1;
     }
+
+    public boolean exists(String username){
+        return namedParameterJdbcTemplate
+                .queryForObject("select count(*) from users where username=:username",
+                        new MapSqlParameterSource("username",username),Integer.class) == 1;
+    }
 }

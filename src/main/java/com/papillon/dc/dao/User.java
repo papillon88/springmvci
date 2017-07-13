@@ -1,15 +1,34 @@
 package com.papillon.dc.dao;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 /**
  * Created by papillon on 7/13/2017.
  */
 public class User {
 
+    @NotBlank(message = "cannot be blank")
+    @Size(min = 8,max = 15, message = "size should be between 8 to 15 chars")
+    @Pattern(regexp = "^\\w{8,}$", message = "only numbers,letters or underscore chars")
     private String username;
+
+    @Email(message = "not a valid email")
+    @NotEmpty(message = "email cannot be empty")
+    private String email;
+
+    @NotBlank
+    @Pattern(regexp = "^\\S+$" , message = "no spaces")
+    @Size(min = 8, max = 15, message = "passwrd between 8 and 15 chars only")
     private String password;
+
     private boolean enabled;
     private String authority;
-    private String email;
+
 
     public User(){}
 

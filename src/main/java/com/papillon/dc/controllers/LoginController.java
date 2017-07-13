@@ -4,6 +4,8 @@ import com.papillon.dc.dao.Offer;
 import com.papillon.dc.dao.User;
 import com.papillon.dc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,25 +30,37 @@ public class LoginController {
     }
 
     @RequestMapping("/login")
-    public String showLogin(){
+    public String showLogin() {
         return "login";
     }
 
     @RequestMapping("/newaccount")
-    public String showNewAccount(Model model){
+    public String showNewAccount(Model model) {
         model.addAttribute("user", new User());
         return "newaccount";
     }
 
-    @RequestMapping(value = "/createaccount",method = RequestMethod.POST)
-    public String createAccount(@Valid User user,BindingResult result){
-        if(result.hasErrors()){
+    @RequestMapping(value = "/createaccount", method = RequestMethod.POST)
+    public String createAccount(@Valid User user, BindingResult result) {
+        if (result.hasErrors()) {
             return "newaccount";
-        } else {
-            user.setEnabled(true);
-            user.setAuthority("user");
+        }
+        user.setEnabled(true);
+        user.setAuthority("user");
+
+        if(userService.exists(user.getUsername())){
+            result.rejectValue("username","DuplicateKey.user.username","This username already exixts");
+            return "newaccount";
+        }
+        //backup duplicate user name error handling
+        try {
             userService.create(user);
             return "accountcreated";
+        } catch (DuplicateKeyException e) {
+            System.out.println(e.getClass());
+            result.rejectValue("username","DuplicateKey.user.username","This username already exixts");
         }
+        //end of backup
+        return "newaccount";
     }
 }

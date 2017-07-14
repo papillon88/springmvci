@@ -33,6 +33,7 @@
         <tr>
             <td class="label"></td>
             <td><input class="control" value="Submit" type="submit"/></td>
+            <td><p><a href="${pageContext.request.contextPath}/logout">Logout</a></p></td>
         </tr>
     </table>
 </sf:form>

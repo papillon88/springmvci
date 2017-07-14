@@ -40,6 +40,11 @@ public class LoginController {
         return "newaccount";
     }
 
+    @RequestMapping(value = "/logout")
+    public String showLoginOnLogout(){
+        return "login";
+    }
+
     @RequestMapping(value = "/createaccount", method = RequestMethod.POST)
     public String createAccount(@Valid User user, BindingResult result) {
         if (result.hasErrors()) {

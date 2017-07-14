@@ -12,11 +12,43 @@
 <head>
     <title>Create Acc</title>
     <link href="${pageContext.request.contextPath}/static/css/main.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/javascript/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        function onLoad() {
+            $("#pass").keyup(onLoad2);
+            $("#cpass").keyup(onLoad2);
+            $("#details").submit(canSubmit);
+        }
+        function canSubmit(){
+            var pass = $("#pass").val();
+            var cpass = $("#cpass").val();
+            if(pass!=cpass)
+                return false;
+            else
+                return true;
+        }
+        function onLoad2() {
+            var pass = $("#pass").val();
+            var cpass = $("#cpass").val();
+            if(pass.length > 3 || cpass.length > 3){
+                if(pass==cpass){
+                    $("#matchmsg").text("Passwords match");
+                    $("#matchmsg").addClass("valid");
+                    $("#matchmsg").removeClass("error");
+                } else {
+                    $("#matchmsg").text("Passwords dont match");
+                    $("#matchmsg").addClass("error");
+                    $("#matchmsg").removeClass("valid");
+                }
+            }
+        }
+        $(document).ready(onLoad);
+    </script>
 </head>
 <body>
 
 
-<sf:form method="post" action="${pageContext.request.contextPath}/createaccount" commandName="user">
+<sf:form id="details" method="post" action="${pageContext.request.contextPath}/createaccount" commandName="user">
     <table class="formtable">
         <tr>
             <td class="label">Username</td>
@@ -30,12 +62,12 @@
         </tr>
         <tr>
             <td class="label">Password</td>
-            <td><sf:input class="control" path="password" name="password" type="text"/><br/>
+            <td><sf:input id="pass" class="control" path="password" name="password" type="text"/><br/>
             <div class="error"><sf:errors path="password"></sf:errors></div></td>
         </tr>
         <tr>
             <td class="label">Confirm Password</td>
-            <td><input class="control" name="confirmpass" type="text"/><br></td>
+            <td><input id="cpass" class="control" name="confirmpass" type="text"/><div id="matchmsg"></div></td>
         </tr>
         <tr>
             <td class="label"></td>

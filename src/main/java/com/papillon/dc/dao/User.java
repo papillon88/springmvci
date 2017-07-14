@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 public class User {
 
     @NotBlank(message = "cannot be blank")
-    @Size(min = 8,max = 15, message = "size should be between 8 to 15 chars")
+    @Size(min = 8,max = 15,message = "size should be between 8 to 15 chars")
     @Pattern(regexp = "^\\w{8,}$", message = "only numbers,letters or underscore chars")
     private String username;
 

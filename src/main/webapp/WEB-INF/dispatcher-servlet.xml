@@ -15,8 +15,13 @@
     <mvc:annotation-driven></mvc:annotation-driven>
     <context:component-scan base-package="com.papillon.dc.controllers"></context:component-scan>
     <mvc:resources mapping="/static/**" location="/WEB-INF/resources/"></mvc:resources>
-    <!--<context:property-placeholder location="sdbc.properties" ></context:property-placeholder>-->
+    <!--<context:property-placeholder location="./WEB-INF/messages/messages.properties" ></context:property-placeholder>-->
 
+    <!--this is NOT WORKING !!-->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="com.papillon.dc.messages.messages"></property>
+    </bean>
+    <!--end of faulty bean-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsps/"></property>
         <property name="suffix" value=".jsp"></property>

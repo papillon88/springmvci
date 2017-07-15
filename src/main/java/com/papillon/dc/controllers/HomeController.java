@@ -19,10 +19,4 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/admin")
-    public String showAdmin(){
-        return "admin";
-    }
-
-
 }

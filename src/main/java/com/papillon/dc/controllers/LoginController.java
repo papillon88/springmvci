@@ -45,6 +45,13 @@ public class LoginController {
         return "loggedout";
     }
 
+    @RequestMapping("/admin")
+    public String showAdmin(Model model){
+        List<User> users = userService.getAllUsers();
+        model.addAttribute("users",users);
+        return "admin";
+    }
+
     @RequestMapping(value = "/createaccount", method = RequestMethod.POST)
     public String createAccount(@Valid User user, BindingResult result) {
         if (result.hasErrors()) {

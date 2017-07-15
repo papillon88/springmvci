@@ -1,6 +1,7 @@
 package com.papillon.dc.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.*;
 import org.springframework.stereotype.Repository;
@@ -47,5 +48,11 @@ public class UserDao {
         return namedParameterJdbcTemplate
                 .queryForObject("select count(*) from users where username=:username",
                         new MapSqlParameterSource("username",username),Integer.class) == 1;
+    }
+
+    public List<User> getAllUsers() {
+        return namedParameterJdbcTemplate
+                .query("select * from users,authorities where users.username=authorities.username",
+                        BeanPropertyRowMapper.newInstance(User.class));
     }
 }

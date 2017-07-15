@@ -27,4 +27,8 @@ public class UserService {
     public boolean exists(String username){
         return userDao.exists(username);
     }
+
+    public List<User> getAllUsers() {
+        return userDao.getAllUsers();
+    }
 }

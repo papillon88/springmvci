@@ -40,10 +40,6 @@ public class LoginController {
         return "newaccount";
     }
 
-    @RequestMapping(value = "/loggedout")
-    public String showLoggedOut(){
-        return "loggedout";
-    }
 
     @RequestMapping("/admin")
     public String showAdmin(Model model){

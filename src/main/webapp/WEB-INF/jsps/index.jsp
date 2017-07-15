@@ -8,6 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 
 <html>
   <head>
@@ -25,6 +27,18 @@
 
   <a href="${pageContext.request.contextPath}/offers">Show Offers</a><br><br><br>
   <a href="${pageContext.request.contextPath}/createoffer">Create Offer</a>
+
+  <sec:authorize access="isAuthenticated()">
+    <form method="post" action="${pageContext.request.contextPath}/logout">
+      <input name="submit" type="submit" value="Logout"/>
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+    </form>
+  <%--<p><a href="${pageContext.request.contextPath}/logout">Logout</a></p>--%>
+  </sec:authorize>
+
+  <sec:authorize access="hasRole('ROLE_ADMIN')">
+    <p><a href="${pageContext.request.contextPath}/admin">Admin</a></p>
+  </sec:authorize>
 
   </body>
 </html>

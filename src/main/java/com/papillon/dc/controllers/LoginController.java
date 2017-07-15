@@ -40,9 +40,9 @@ public class LoginController {
         return "newaccount";
     }
 
-    @RequestMapping(value = "/logout")
-    public String showLoginOnLogout(){
-        return "login";
+    @RequestMapping(value = "/loggedout")
+    public String showLoggedOut(){
+        return "loggedout";
     }
 
     @RequestMapping(value = "/createaccount", method = RequestMethod.POST)

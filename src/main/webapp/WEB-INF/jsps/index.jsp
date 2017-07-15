@@ -33,7 +33,10 @@
       <input name="submit" type="submit" value="Logout"/>
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     </form>
-  <%--<p><a href="${pageContext.request.contextPath}/logout">Logout</a></p>--%>
+  </sec:authorize>
+
+  <sec:authorize access="!isAuthenticated()">
+    <p><a href="${pageContext.request.contextPath}/login">Login</a></p>
   </sec:authorize>
 
   <sec:authorize access="hasRole('ROLE_ADMIN')">

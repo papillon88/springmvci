@@ -17,7 +17,7 @@
 <c:if test="${param.error != null}">
     <p class="error">Bad Credentials</p>
 </c:if>
-<form name='f' action='${pageContext.request.contextPath}/login' method='POST'>
+<form name='f' action='${pageContext.request.contextPath}/login' method='post'>
     <table class="formtable">
         <tr>
             <td>User:</td>

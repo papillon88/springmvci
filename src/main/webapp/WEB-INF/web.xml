@@ -43,5 +43,8 @@
             /WEB-INF/beanconfigs/security-context.xml
         </param-value>
     </context-param>
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
 
 </web-app>

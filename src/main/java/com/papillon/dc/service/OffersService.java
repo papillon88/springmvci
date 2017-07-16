@@ -3,6 +3,7 @@ package com.papillon.dc.service;
 import com.papillon.dc.dao.Offer;
 import com.papillon.dc.dao.OfferDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class OffersService {
         return offerDao.getOffers();
     }
 
+    @Secured({"ROLE_USER","ROLE_ADMIN"})
     public void create(Offer offer){
         offerDao.create(offer);
     }

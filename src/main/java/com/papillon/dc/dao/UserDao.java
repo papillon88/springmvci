@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.*;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +20,7 @@ import java.util.List;
 public class UserDao {
 
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private PasswordEncoder passwordEncoder;
 
     public UserDao(){
         System.out.println("success userDao");
@@ -30,18 +32,29 @@ public class UserDao {
         this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
+
     @Transactional
     public boolean create(User user){
-        BeanPropertySqlParameterSource beanPropertySqlParameterSource =
-                new BeanPropertySqlParameterSource(user);
+        MapSqlParameterSource parameterSource =
+                new MapSqlParameterSource();
+        parameterSource.addValue("username",user.getUsername());
+        parameterSource.addValue("password",passwordEncoder.encode(user.getPassword()));
+        parameterSource.addValue("email",user.getEmail());
+        parameterSource.addValue("enabled",user.isEnabled());
+        parameterSource.addValue("authority",user.getAuthority());
+
         namedParameterJdbcTemplate
                 .update("insert into users(username,password,enabled) " +
                                 "values (:username,:password,:enabled)",
-                        beanPropertySqlParameterSource);
+                        parameterSource);
         return namedParameterJdbcTemplate
                 .update("insert into authorities(username,authority) " +
                                 "values (:username,:authority)",
-                        beanPropertySqlParameterSource) == 1;
+                        parameterSource) == 1;
     }
 
     public boolean exists(String username){

@@ -16,6 +16,7 @@
                                     users-by-username-query="select * from users where binary username=?"
         authorities-by-username-query="select * from authorities where binary username=?"
         id="jdbcUserService"/>
+        <security:password-encoder ref="passwordEncoder"/>
     </security:authentication-provider>
 </security:authentication-manager>
 
@@ -42,5 +43,9 @@
     </security:http>
     <!--required for method level security using @Secured-->
     <security:global-method-security secured-annotations="enabled"/>
+
+    <bean id="passwordEncoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+
+    </bean>
 
 </beans>

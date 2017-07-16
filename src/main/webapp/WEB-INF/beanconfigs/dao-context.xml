@@ -16,10 +16,12 @@
     <jee:jndi-lookup jndi-name="jdbc/spring" id="dataSource" expected-type="javax.sql.DataSource">
     </jee:jndi-lookup>
 
+
+    <!--necessary for @Transactional-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
-
     <tx:annotation-driven></tx:annotation-driven>
+    <!--end of @Transactional-->
 
 </beans>

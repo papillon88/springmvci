@@ -62,12 +62,12 @@
         </tr>
         <tr>
             <td class="label">Password</td>
-            <td><sf:input id="pass" class="control" path="password" name="password" type="text"/><br/>
+            <td><sf:input id="pass" class="control" path="password" name="password" type="password"/><br/>
             <div class="error"><sf:errors path="password"></sf:errors></div></td>
         </tr>
         <tr>
             <td class="label">Confirm Password</td>
-            <td><input id="cpass" class="control" name="confirmpass" type="text"/><div id="matchmsg"></div></td>
+            <td><input id="cpass" class="control" name="confirmpass" type="password"/><div id="matchmsg"></div></td>
         </tr>
         <tr>
             <td class="label"></td>

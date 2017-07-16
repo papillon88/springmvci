@@ -29,6 +29,7 @@ public class UserService {
         return userDao.exists(username);
     }
 
+    //this annotation throws AcceddDeniedException when invoked
     @Secured("ROLE_ADMIN")
     public List<User> getAllUsers() {
         return userDao.getAllUsers();

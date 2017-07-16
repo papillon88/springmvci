@@ -48,6 +48,11 @@ public class LoginController {
         return "admin";
     }
 
+    @RequestMapping("/denied")
+    public String showDenied(Model model){
+        return "denied";
+    }
+
     @RequestMapping(value = "/createaccount", method = RequestMethod.POST)
     public String createAccount(@Valid User user, BindingResult result) {
         if (result.hasErrors()) {

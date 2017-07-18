@@ -37,6 +37,16 @@ dependencies {
     compile group: 'org.springframework.security', name: 'spring-security-web', version: '4.2.3.RELEASE'
     compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.2.3.RELEASE'
     compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: '4.2.3.RELEASE'
+    //apache tiles
+    // https://mvnrepository.com/artifact/org.apache.tiles/tiles-core
+    compile group: 'org.apache.tiles', name: 'tiles-core', version: '3.0.7'
+    compile group: 'org.apache.tiles', name: 'tiles-jsp', version: '3.0.7'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+
+
+
+
+
 
 
 

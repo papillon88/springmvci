@@ -16,6 +16,7 @@
         <put-attribute name="content" value="/WEB-INF/jsps/index.jsp"></put-attribute>
     </definition>
     <definition name="offers" extends="offers.base">
+        <put-attribute name="includes" value="/WEB-INF/bridges/tablelayout.jsp"></put-attribute>
         <put-attribute name="title" value="Show Offers"></put-attribute>
         <put-attribute name="content" value="/WEB-INF/jsps/offers.jsp"></put-attribute>
     </definition>
@@ -25,7 +26,7 @@
     </definition>
     <definition name="newaccount" extends="offers.base">
         <put-attribute name="title" value="NewAccount"></put-attribute>
-        <put-attribute name="includes" value="/WEB-INF/tiles/newaccountscript.jsp"></put-attribute>
+        <put-attribute name="includes" value="/WEB-INF/bridges/newaccountscript.jsp"></put-attribute>
         <put-attribute name="content" value="/WEB-INF/jsps/newaccount.jsp"></put-attribute>
     </definition>
     <definition name="accountcreated" extends="offers.base">

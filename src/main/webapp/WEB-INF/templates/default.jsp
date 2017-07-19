@@ -13,7 +13,17 @@
 </head>
 <body>
 
-Hello from Tiles !
+<div>
+    <tiles:insertAttribute name="header"></tiles:insertAttribute>
+</div>
+
+<div>
+    <tiles:insertAttribute name="content"></tiles:insertAttribute>
+</div>
+
+<div>
+    <tiles:insertAttribute name="footer"></tiles:insertAttribute>
+</div>
 
 </body>
 </html>

@@ -7,12 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <title>Admin Page</title>
-    <link href="${pageContext.request.contextPath}/static/css/main.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
+
 only visible to admins
 <table class="formtable">
 <tr><td>Username</td><td>Email</td><td>Role</td><td>Enabled</td></tr>
@@ -25,5 +20,3 @@ only visible to admins
         </tr>
     </c:forEach>
 </table>
-</body>
-</html>

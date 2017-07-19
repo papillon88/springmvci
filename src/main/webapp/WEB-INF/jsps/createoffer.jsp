@@ -8,12 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
-<html>
-<head>
-    <title>Title</title>
-<link href="${pageContext.request.contextPath}/static/css/main.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
+
 
 
 <sf:form method="post" action="${pageContext.request.contextPath}/docreate" commandName="offer">
@@ -36,6 +31,3 @@
         </tr>
     </table>
 </sf:form>
-
-</body>
-</html>

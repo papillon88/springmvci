@@ -12,6 +12,7 @@
     <link href="${pageContext.request.contextPath}/static/css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/javascript/jquery-3.2.1.min.js"></script>
     <title><tiles:insertAttribute name="title"></tiles:insertAttribute></title>
+    <tiles:insertAttribute name="includes"></tiles:insertAttribute>
 </head>
 <body>
 

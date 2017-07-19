@@ -8,12 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 
-<html>
+<%--<html>
 <head>
     <title>Create Acc</title>
     <link href="${pageContext.request.contextPath}/static/css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/javascript/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
+    --%><%--<script type="text/javascript">
         function onLoad() {
             $("#pass").keyup(onLoad2);
             $("#cpass").keyup(onLoad2);
@@ -43,9 +43,9 @@
             }
         }
         $(document).ready(onLoad);
-    </script>
-</head>
-<body>
+    </script>--%>
+<%--</head>
+<body>--%>
 
 
 <sf:form id="details" method="post" action="${pageContext.request.contextPath}/createaccount" commandName="user">
@@ -76,5 +76,5 @@
     </table>
 </sf:form>
 
-</body>
-</html>
+<%--</body>
+</html>--%>

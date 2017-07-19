@@ -22,8 +22,23 @@
         <property name="basename" value="com.papillon.dc.messages.messages"></property>
     </bean>
     <!--end of faulty bean-->
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+
+   <!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsps/"></property>
         <property name="suffix" value=".jsp"></property>
+    </bean>-->
+
+    <!--apache tiles view resolver-->
+    <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+
+    </bean>
+
+    <bean id="tilesConfigurere" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/layouts/default.xml</value>
+            </list>
+        </property>
     </bean>
 </beans>

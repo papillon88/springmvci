@@ -49,12 +49,16 @@ div.header {
     background-color: red;
 }
 
-.login {
+a.login {
     position: absolute;
+    top: 10px;
+    right:10px;
+    color: white;
 }
 
 a.title {
-
+    color: white;
+    font-size: 30px;
 }
 
 

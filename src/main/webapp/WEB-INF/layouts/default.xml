@@ -14,4 +14,8 @@
         <put-attribute name="title" value="Offers Index"></put-attribute>
         <put-attribute name="content" value="/WEB-INF/jsps/index.jsp"></put-attribute>
     </definition>
+    <definition name="offers" extends="offers.base">
+        <put-attribute name="title" value="Show Offers"></put-attribute>
+        <put-attribute name="content" value="/WEB-INF/jsps/offers.jsp"></put-attribute>
+    </definition>
 </tiles-definitions>

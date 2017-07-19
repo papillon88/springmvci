@@ -15,11 +15,11 @@
 </head>
 <body>
 
-<div>
+<div class="header">
     <tiles:insertAttribute name="header"></tiles:insertAttribute>
 </div>
 
-<div>
+<div class="content">
     <tiles:insertAttribute name="content"></tiles:insertAttribute>
 </div>
 

@@ -10,13 +10,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+
+<a class="title" href="${pageContext.request.contextPath}/">Offers</a>
+
+<sec:authorize access="!isAuthenticated()">
+    <p><a class="login" href="${pageContext.request.contextPath}/login">Login</a></p>
+</sec:authorize>
+
 <sec:authorize access="isAuthenticated()">
     <form method="post" action="${pageContext.request.contextPath}/logout">
-        <input name="submit" type="submit" value="Logout"/>
+        <input class="login" name="submit" type="submit" value="Logout"/>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     </form>
 </sec:authorize>
 
-<sec:authorize access="!isAuthenticated()">
-    <p><a href="${pageContext.request.contextPath}/login">Login</a></p>
-</sec:authorize>

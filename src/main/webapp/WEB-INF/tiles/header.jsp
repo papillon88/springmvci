@@ -17,10 +17,10 @@
     <p><a class="login" href="${pageContext.request.contextPath}/login">Login</a></p>
 </sec:authorize>
 
-<sec:authorize access="isAuthenticated()">
+<%--<sec:authorize access="isAuthenticated()">
     <form method="post" action="${pageContext.request.contextPath}/logout">
         <input class="login" name="submit" type="submit" value="Logout"/>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     </form>
-</sec:authorize>
+</sec:authorize>--%>
 

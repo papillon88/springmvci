@@ -28,13 +28,13 @@
   <a href="${pageContext.request.contextPath}/offers">Show Offers</a><br><br><br>
   <a href="${pageContext.request.contextPath}/createoffer">Create Offer</a>
 
-<%--  <sec:authorize access="isAuthenticated()">
+  <sec:authorize access="isAuthenticated()">
     <form method="post" action="${pageContext.request.contextPath}/logout">
       <input name="submit" type="submit" value="Logout"/>
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
     </form>
   </sec:authorize>
-
+<%--
   <sec:authorize access="!isAuthenticated()">
     <p><a href="${pageContext.request.contextPath}/login">Login</a></p>
   </sec:authorize>--%>

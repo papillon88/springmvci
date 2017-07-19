@@ -13,12 +13,6 @@
     <link href="${pageContext.request.contextPath}/static/css/main.css" rel="stylesheet" type="text/css"/>
 </head>
 <body onload='document.f.username.focus()'>--%>
-<script type="text/javascript">
-    $(document).ready(function(){
-        document.f.username.focus();
-    });
-</script>
-
 
 <h3>Login with Username and Password</h3>
 

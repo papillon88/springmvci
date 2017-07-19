@@ -21,6 +21,7 @@
         <put-attribute name="content" value="/WEB-INF/jsps/offers.jsp"></put-attribute>
     </definition>
     <definition name="login" extends="offers.base">
+        <put-attribute name="includes" value="/WEB-INF/bridges/loginscript.jsp"></put-attribute>
         <put-attribute name="title" value="Login"></put-attribute>
         <put-attribute name="content" value="/WEB-INF/jsps/login.jsp"></put-attribute>
     </definition>

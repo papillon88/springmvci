@@ -5,6 +5,6 @@
 
 <tiles-definitions>
     <definition name="index" template="/WEB-INF/templates/default.jsp">
-
+        <put-attribute name="title" value="Offers Homepage"></put-attribute>
     </definition>
 </tiles-definitions>

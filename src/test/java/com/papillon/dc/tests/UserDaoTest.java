@@ -1,5 +1,6 @@
 package com.papillon.dc.tests;
 
+import com.papillon.dc.dao.User;
 import com.papillon.dc.dao.UserDao;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.sql.DataSource;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by papillon on 7/19/2017.
@@ -34,10 +36,19 @@ public class UserDaoTest {
     @Before
     public void init(){
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+        jdbcTemplate.execute("select * from users");
+        jdbcTemplate.execute("select * from authorities");
     }
 
     @Test
     public void testCreateUser(){
-        assertEquals("Dummy test",1,1);
+        //assertEquals("Dummy test",1,1);
+        User user = new User("dummyuser2",
+                        "dummyuser2",
+                        true,
+                        "ROLE_ADMIN",
+                        "dummyuser2@gmail.com");
+
+        assertTrue("user creation should return true",userDao.create(user));
     }
 }

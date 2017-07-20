@@ -13,6 +13,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.sql.DataSource;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -50,5 +52,10 @@ public class UserDaoTest {
                         "dummyuser2@gmail.com");
 
         assertTrue("user creation should return true",userDao.create(user));
+
+        /*List<User> users = userDao.getAllUsers();
+        assertEquals("number of users ##",1,users.size());
+        assertTrue("users should exist",userDao.exists(user.getUsername()));
+        assertEquals("created users should be identical to retirieved users",user,users.get(0));*/
     }
 }

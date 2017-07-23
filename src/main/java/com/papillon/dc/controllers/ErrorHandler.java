@@ -14,7 +14,7 @@ public class ErrorHandler {
 
     @ExceptionHandler(DataAccessException.class)
     public String handleDatabaseException(DataAccessException ex){
-        System.out.println("Database internal error occured");
+        System.out.println("Database internal error occured.");
         return "error";
     }
 
